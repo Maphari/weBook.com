@@ -17,7 +17,7 @@ export const Register = () => {
             <h1 className="showcase-container__top-header">ental booking.</h1>
           </div>
         </div>
-        <form className="register-container__form">ff</form>
+        <form className="register-container__form">gff</form>
       </section>
     </>
   );
