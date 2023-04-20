@@ -1,0 +1,77 @@
+.bankaccount-container {
+  background-color: $PRIMARY-COLOR;
+  padding: 2rem 4.5rem;
+  color: $WHITE-COLOR;
+  height: min-content;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 4.5rem;
+
+    &-nav {
+      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35);
+      border-radius: 50px;
+      background-color: $TERTIARY-COLOR;
+      padding: 0.6rem 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      font-family: $LATO-FONT-SECONDARY;
+      .nav-links {
+        font-size: 1.1rem;
+      }
+      .active-nav {
+        background: #534e4e;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 40px;
+      }
+    }
+  }
+  .bankaccount-container__center {
+    &-header {
+      font-family: $LATO-FONT-SECONDARY;
+      font-weight: 900;
+      font-size: 38px;
+    }
+    &-para {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 0.7rem;
+    }
+    &-btns {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      &__explore,
+      &__create {
+        border-radius: 50px;
+        padding: 1.2rem;
+        font-size: 1.1rem;
+        margin-top: 0.9rem;
+        max-width: 12rem;
+      }
+      &__explore {
+        background: linear-gradient(
+            179.06deg,
+            rgba(166, 162, 154, 0.5) 27.38%,
+            rgba(255, 252, 243, 0.055) 99.2%
+          ),
+          #000000;
+      }
+      &__create {
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.29) 62.54%,
+            rgba(0, 0, 0, 0) 116.67%
+          ),
+          #ffffff;
+          color: $PRIMARY-COLOR;
+      }
+    }
+  }
+}

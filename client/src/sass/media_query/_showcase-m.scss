@@ -1,0 +1,150 @@
+@media screen and (max-width: 56.25rem) {
+  .showcase-container__bottom-socials {
+    display: none;
+  }
+  .showcase-container {
+    height: 100vh;
+    &__top {
+      .menu {
+        display: none;
+      }
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        right: 5%;
+        bottom: 30%;
+        background-color: red;
+        height: 40px;
+        width: 5%;
+      }
+    }
+
+    &__center {
+      margin-top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      &-header,
+      &-para,
+      .news-header,
+      .news-para {
+        text-align: center;
+      }
+
+      .form {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 51.875rem) {
+  .mobile-header {
+    font-size: 6vw !important;
+  }
+  .card {
+    display: none;
+  }
+  .bankaccount-container__top {
+    margin-bottom: .9rem;
+  }
+  .bankaccount-container {
+    padding: 1rem 2rem 0.4rem !important;
+  }
+  .bankaccount-container__center-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .bankaccount-container__center-btns__explore,
+  .bankaccount-container__center-btns__create {
+    width: 100% !important;
+  }
+  .bankaccount-container__center-header {
+    font-size: 4.2vw !important;
+    text-align: center;
+    margin-bottom: .3rem;
+  }
+  .bankaccount-container__center-para {
+    font-size: 3vw;
+    text-align: center;
+  }
+  .mobile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .bankaccount-container {
+    &__top {
+      margin-top: .3rem;
+
+      &-nav {
+        width: 100%;
+        padding: 0.8rem 1rem;
+
+        .nav-links {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .mobile-container,
+  .services-container,
+  .appfeatures-container,
+  .fotter-container,
+  .bankaccount-container {
+    padding: 1.5rem 2rem;
+  }
+  .showcase-container__bottom {
+    margin: 0.6rem 2rem;
+  }
+  .div-border {
+    display: none;
+  }
+  .showcase-container {
+    &__top,
+    &__center,
+    &__bottom {
+      padding: 1.5rem 2rem;
+    }
+    &__center {
+      &-header {
+        font-size: 5vw;
+      }
+      &-para {
+        font-size: 1.5vw;
+      }
+    }
+
+    .news-header {
+      font-size: 3vw;
+    }
+    .news-para {
+      font-size: 1.9vw;
+    }
+    &__bottom {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .inner-inner {
+        width: 100%;
+      }
+      .inner-innerr {
+        width: 100%;
+      }
+      .inner-div {
+        width: 100%;
+      }
+      &-search {
+        width: 100%;
+      }
+    }
+  }
+}
