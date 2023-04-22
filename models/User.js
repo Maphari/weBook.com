@@ -4,6 +4,8 @@ const bcrypt = require("bcrypt");
 
 const userSchema = new Schema({
   clientID: String,
+  name: String,
+  profilePicture: String,
   email: {
     type: String,
     required: [true, "email is required"],
@@ -18,7 +20,6 @@ const userSchema = new Schema({
   },
   password: {
     type: String,
-    required: [true, "password is required"],
     validate: {
       validator: (password) => {
         return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/.test(

@@ -1,38 +1,27 @@
 import React from "react";
 // THIRD PARTY IMPORTS
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 // COMPONENTS IMPORTS
 import { Card } from "./Card";
 
 export const AppBankaccount = () => {
-  const location = useLocation();
   return (
     <>
       <section className="bankaccount-container">
         <div className="bankaccount-container__top">
-          <div className="bankaccount-container__top-nav rounded-3xl">
-            <Link
-              to=""
-              className={`py-4 nav-links px-3 rounded-2xl ${(location.pathname =
-                "/rental-account" ? "active-nav" : "")}`}
-            >
-              Rental booking account
-            </Link>
-            <Link to="" className="py-4 nav-links px-3 rounded-2xl ">
-              Rental booking hotels
-            </Link>
-            <Link to="" className="py-4 nav-links px-3 rounded-2xl ">
-              Rental booking cars
+          <div className="bankaccount-container__top-nav">
+            <Link to="" className={`py-3 nav-links hover:text-white px-3 `}>
+              Elite Express Inc. bank account
             </Link>
           </div>
         </div>
 
-        <section className="bankaccount-container__center flex items-center justify-between flex-wrap">
+        <section className="bankaccount-container__center flex items-center justify-between flex-wrap py-1">
           <div>
             <h1 className="bankaccount-container__center-header">
-              Obtain a rental agency account to alleviate
-              <br /> concerns and enjoy all the perks offered
-              <br /> by this card.
+              Make payments easily and securely with
+              <br /> Elite Express Inc. using the following bank
+              <br /> account information:
             </h1>
             <p className="bankaccount-container__center-para">
               The purpose of this card is to empower you to take charge of your

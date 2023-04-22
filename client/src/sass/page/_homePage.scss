@@ -1,0 +1,19 @@
+.map-container {
+  padding: 0.8rem 2rem;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  background-color: $TERTIARY-COLOR;
+  color: $WHITE-COLOR;
+
+  .content-container {
+    font-family: $LATO-FONT-SECONDARY;
+  }
+}
+ .hr {
+  border: 1px solid $SECONDARY-COLOR;
+  height: 20px;
+ }

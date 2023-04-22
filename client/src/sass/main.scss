@@ -7,6 +7,9 @@
 @import "./component/card";
 @import "./component/appFeatures";
 @import "./component/register";
+@import "./component/loader";
+// PAGES
+@import "./page/homePage";
 // MEDIA QUERY
 @import "./media_query/showcase-m";
 
@@ -17,6 +20,9 @@ body {
 }
 .color {
   color: $PRIMARY-COLOR;
+}
+a:hover {
+  color: $GRAY-COLOR;
 }
 
 .active {

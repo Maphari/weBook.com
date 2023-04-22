@@ -15,46 +15,41 @@ export const AppFeatures = () => {
         </div>
         <section className="appfeatures-container__cards">
           <div className="appfeatures-container__cards-one">
-            <i className="fa-solid fa-car"></i>
+            <span class="material-symbols-outlined text-3xl opacity-60">
+              local_shipping
+            </span>
             <h1 className="appfeatures-container__cards-one__header">
-              Rent cars
+              Requst for trucks
             </h1>
             <p className="appfeatures-container__cards-one__para">
-              Renting a car can provide convenience and flexibility for your
-              travels, allowing you to explore new destinations at your own
-              pace.
+              Get in touch with Elite Express Inc. today to initiate a
+              personalized transportation solution that caters to your specific
+              requirements.
             </p>
           </div>
           <div className="appfeatures-container__cards-one">
-            <i className="fa-solid fa-hotel"></i>
-            <h1 className="appfeatures-container__cards-one__header">
-              Rent hotels
-            </h1>
-            <p className="appfeatures-container__cards-one__para">
-              Renting a hotel room can provide a comfortable and convenient
-              accommodation option while traveling, allowing you to relax.
-            </p>
-          </div>
-          <div className="appfeatures-container__cards-one">
-            <i className="fa-solid fa-wallet"></i>
+            <span class="material-symbols-outlined text-3xl opacity-60">
+              wallet
+            </span>
             <h1 className="appfeatures-container__cards-one__header">
               Easy payments
             </h1>
             <p className="appfeatures-container__cards-one__para">
-              Easy payment options make renting more accessible and hassle-free,
-              allowing you to enjoy your trip without worrying about complicated
-              payment processes.
+              Convenient payment options make deliveries more accessible and
+              stress-free, allowing you to enjoy the anticipation of your items.
             </p>
           </div>
           <div className="appfeatures-container__cards-one">
-            <i className="fa-solid fa-credit-card"></i>
+            <span class="material-symbols-outlined text-3xl opacity-60">
+              credit_card
+            </span>
             <h1 className="appfeatures-container__cards-one__header">
               Card benefits
             </h1>
             <p className="appfeatures-container__cards-one__para">
-              Using a credit card to rent can offer various benefits such as
-              rental car insurance, rewards points, and fraud protection, making
-              it a smart choice.
+              Utilizing a credit card for delivery services can provide numerous
+              advantages, including fraud protection, rewards points, and other
+              benefits that may vary.
             </p>
           </div>
         </section>

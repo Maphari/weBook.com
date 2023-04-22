@@ -21,7 +21,7 @@ export const Card = () => {
             <p className="card_numer">**** **** **** 6258</p>
             <div className="card__space-75">
               <span className="card__label">Card holder</span>
-              <p className="card__info">Reantal booking</p>
+              <p className="card__info">Elite Express Inc.</p>
             </div>
             <div className="card__space-25">
               <span className="card__label">Expires</span>

@@ -1,23 +1,82 @@
-import React from "react";
-// COMPONENTS IMPORTS
-import LandingPage from "./LandingPage";
-// THIRD PARTY IMPORTS
-import { Routes, Route } from "react-router-dom";
-import { Hotels } from "./Hotels";
-import { Cars } from "./Cars";
-import { Register } from "./account/Register";
-import { Login } from "./account/Login";
+import React, { useEffect, useState } from "react";
+import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
+import { Home } from "./authenticatedPages/Home";
+import { LandingPage } from "./LandingPageComponents/LandingPage";
+import { ToastContainer } from "react-toastify";
+import { Signup } from "./account/Signup";
+import { Signin } from "./account/Signin";
+import Loader from "./animation/Loader";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+  const sessionID = localStorage.getItem("sessionID");
+  const googleToken = localStorage.getItem("google-Token");
+  const spotifyToken = localStorage.getItem("spotify-Token");
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  function RenderRoutes() {
+    return (
+      <Routes>
+        <Route
+          path="/"
+          element={
+            sessionID || googleToken || spotifyToken ? (
+              <Navigate to="/home" replace={true} />
+            ) : (
+              <LandingPage />
+            )
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            sessionID || googleToken || spotifyToken ? <Home /> : <Signin />
+          }
+        />
+        <Route
+          path="/account/signin"
+          element={
+            !sessionID || !googleToken || !spotifyToken ? <Signin /> : <Home />
+          }
+        />
+        <Route
+          path="/account/signup"
+          element={
+            !sessionID || !googleToken || !spotifyToken ? <Signup /> : <Home />
+          }
+        />
+      </Routes>
+    );
+  }
+
+  useEffect(() => {
+    if (sessionID || googleToken || spotifyToken) {
+    }
+  }, []);
+
+  useEffect(() => {
+    const loader = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    return () => clearTimeout(loader);
+  }, []);
+
   return (
     <>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/hotels" element={<Hotels />} />
-        <Route path="/cars" element={<Cars />} />
-        <Route path="/account/register" element={<Register/>} />
-        <Route path="/account/login" element={<Login/>} />
-      </Routes>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+      {loading ? <Loader /> : <RenderRoutes />}
     </>
   );
 }

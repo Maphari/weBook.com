@@ -20,41 +20,30 @@ const AppShowcase = () => {
       <section className="showcase-container">
         <div className="showcase-container__top flex items-center flex-wrap justify-between">
           <div className="flex items-center gap-[0.01rem]">
-            <img
-              src={LogoImage}
-              alt="company logo"
-              className="showcase-container__top-logo w-10 h-10 object-cover"
-            />
-            <h1 className="showcase-container__top-header">ental booking.</h1>
+            <h1 className="showcase-container__top-header">
+              Elite Express Inc.
+            </h1>
           </div>
           <div className="menu flex items-center flex-wrap gap-2">
-            <Link
-              to="/hotels"
-              className={`${
-                location.pathname === "/hotel" ? "active" : ""
-              } active-hover p-2 flex items-center gap-2 opacity-80 hover:opacity-100`}
-            >
-              <i className="fa-solid fa-hotel"></i> <span>Hotels</span>
-            </Link>
-
             <Link
               to="/cars"
               className={`${
                 location.pathname === "/car-rental" ? "active" : ""
-              } active-hover p-2 flex items-center gap-2 opacity-80 hover:opacity-100 mr-4`}
+              } active-hover p-2 flex items-center gap-2 opacity-80 hover:opacity-100 mr-4 hover:text-white`}
             >
-              <i className="fa-solid fa-car"></i> <span>Car rental</span>
+              <i className="fa-solid fa-truck-fast"></i>{" "}
+              <span>Become a helper</span>
             </Link>
 
             <Link
-              to="/account/register"
-              className={`sign-button p-2 flex w-20 items-center justify-center gap-2 opacity-80 hover:opacity-100`}
+              to="/account/signup"
+              className={`sign-button p-2 flex w-20 items-center justify-center gap-2 opacity-80 hover:opacity-100 hover:text-white`}
             >
               Register
             </Link>
             <Link
-              to="/account/login"
-              className={`sign-button w-20 p-2 flex items-center justify-center gap-2 opacity-80 hover:opacity-100`}
+              to="/account/signin"
+              className={`sign-button w-20 p-2 flex items-center justify-center gap-2 opacity-80 hover:opacity-100 hover:text-white`}
             >
               Log in
             </Link>
@@ -63,32 +52,32 @@ const AppShowcase = () => {
         <div className="showcase-container__center flex justify-between items-center">
           <div>
             <h1 className="showcase-container__center-header drop-shadow-2xl">
-              Easy way to find the place
-              <br /> you've been looking for.
+              Elite Express Inc. delivers excellence <br />
+              through efficient and reliable <br />
+              transportation solutions
             </h1>
             <p className="showcase-container__center-para">
-              We are here for you so that you get your desired place to stay. We
-              dont want you to
-              <br /> worry more we want you to feel the comfort of what you
-              paied for isn't that amazing?
+              With a commitment to excellence, Elite Express Inc. provides fast
+              and cost-effective transportation
+              <br /> services to businesses across the nation.
             </p>
             <div className="mt-4">
               <h1 className="news-header">Subcribe to our news letter</h1>
               <p className="news-para">
-                Subcribing will benefit you when we have promotions
+                Subcribing will benefit you when we have delivery promotion.
               </p>
               <form
                 onSubmit={handleBrowserBehaviour}
-                className="flex form items-center bg-[#050505] w-full]"
+                className="flex form items-center h-10 mt-3 bg-[#050505] w-[70%]"
               >
                 <input
                   type="email"
-                  className="bg-[#050505] flex flex-1 p-4 drop-shadow-2xl font-normal outline-none"
+                  className="bg-[#050505] flex flex-1 p-3 drop-shadow-2xl font-normal outline-none"
                   placeholder="example@gmail.com"
                   onChange={(e) => setSubscribeEmail(e.target.value)}
                   value={subscribeEmail}
                 />
-                <button className="p-4 bg-white text-[#050505]">
+                <button className="p-3 bg-white text-[#050505]">
                   Subscribe
                 </button>
               </form>
@@ -101,14 +90,16 @@ const AppShowcase = () => {
             <i className="fa-brands fa-youtube text-xl py-1 px-3"></i>
           </div>
         </div>
-        <section className="flex items-centr relative">
+        <section className="flex items-center mt-6 relative">
           <div className="showcase-container__bottom drop-shadow-2xl relative">
             <div className="inner">
               <div className="inner-div relative">
                 <div className="inner-inner">
-                  <h1 className="inner-div__header">Location</h1>
-                  <div className="inner-innerr">
-                    <i className="fa-solid fa-bed opacity-60 text-xl"></i>
+                  <h1 className="inner-div__header">Pickup point</h1>
+                  <div className="inner-innerr flex items-center">
+                    <span class="material-symbols-outlined opacity-60">
+                      map
+                    </span>
                     <button type="submit" className="button-dates">
                       Where are you going?
                     </button>
@@ -118,11 +109,13 @@ const AppShowcase = () => {
               </div>
               <div className="inner-div">
                 <div className="inner-inner">
-                  <h1 className="inner-div__header">Dates</h1>
-                  <div className="inner-innerr">
-                    <i className="fa-solid fa-calendar-days opacity-60 text-xl"></i>
+                  <h1 className="inner-div__header">Destination</h1>
+                  <div className="inner-innerr flex items-center">
+                    <span class="material-symbols-outlined opacity-60">
+                      distance
+                    </span>
                     <button type="submit" className="button-dates">
-                      Check in - Check out
+                      where to be delivered
                     </button>
                   </div>
                 </div>
@@ -130,11 +123,13 @@ const AppShowcase = () => {
               </div>
               <div className="inner-div">
                 <div className="inner-inner">
-                  <h1 className="inner-div__header">People in number</h1>
-                  <div className="inner-innerr">
-                    <i className="fa-solid fa-user opacity-60 text-xl"></i>
+                  <h1 className="inner-div__header">Choose truck</h1>
+                  <div className="inner-innerr flex items-center">
+                    <span class="material-symbols-outlined opacity-60">
+                      local_shipping
+                    </span>
                     <button type="submit" className="button-dates">
-                      0 adults - 0 childern - 0 room
+                      Small truck
                     </button>
                   </div>
                 </div>
@@ -146,10 +141,6 @@ const AppShowcase = () => {
             </button>
           </div>
         </section>
-        {/* <section className="showcase-container__form-trip">
-          <div></div>
-          <button>done</button>
-        </section> */}
       </section>
     </>
   );

@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-// COMPONENTS IMPORTS
+import VansImage from "../../assets/vans.jpg";
+import HeavyImage from "../../assets/heavy.jpg";
+import OnTimeImage from "../../assets/fast delivery.jpg";
 
-import axios from "axios";
 
 export const AppShowcaseServices = () => {
   return (
@@ -12,115 +13,63 @@ export const AppShowcaseServices = () => {
             Take a look at some of our services.
           </h1>
           <p className="services-container__top-para">
-            Here are some of our hotels/car rental services for you to check
-            out. Take a look and see what interests you.
+            Here are some of our delivery services for you to browse and
+            explore. Take a moment to peruse and discover what catches your
+            interest.
           </p>
         </div>
         <section className="services-container__showcase">
-          <div className="services-container__showcase-one">
-            <img
-              src="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="hotel showcase"
-              className="services-container__showcase-one__image rounded"
-            />
-            <div className="flex items-start justify-start flex-col">
-              <h1 className="services-container__showcase-one__header">
-                The sun view
-              </h1>
-              <p className="services-container__showcase-one__para flex items-start justify-start flex-col my-1">
-                The hotel with a pool sun view offers a breathtaking panorama of
-                the surrounding landscape, perfect for those looking to unwind
-                and bask in the sun. With its luxurious amenities and top-notch
-                service, guests can enjoy a refreshing swim while soaking up the
-                warm rays of the sun. Whether you're lounging by the pool or
-                enjoying a meal on the terrace, the hotel's picturesque views
-                create an unforgettable vacation experience.
+          <div className="flex flex-wrap items-center mt-10 gap-3">
+            <div className="w-[40rem]">
+              <h1 className="text-3xl font-bold">Most reliable vihacles</h1>
+              <p className="my-3">
+                Arrive at your destination with confidence and peace of mind by
+                choosing our most reliable vehicles. Our fleet of vehicles
+                offers consistent performance, dependable safety features, and
+                minimal maintenance requirements, making them a smart and
+                cost-effective choice for your transportation needs. Experience
+                the difference of a reliable vehicle and book with us today
               </p>
-              <div>
-                <button className="services-container__showcase-one__book">
-                  Explore more
-                </button>
-              </div>
+              <button className="learn-more">learn more</button>
+            </div>
+            <div className="border-8 p-2 border-gray-900">
+              <img src={VansImage} alt="vans" className="w-[20rem]" />
             </div>
           </div>
-          <div className="services-container__showcase-one">
-            <img
-              src="https://images.pexels.com/photos/221457/pexels-photo-221457.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="hotel showcase"
-              className="services-container__showcase-one__image rounded"
-            />
-            <div className="flex items-start justify-start flex-col">
-              <h1 className="services-container__showcase-one__header">
-                The pool view
-              </h1>
-              <p className="services-container__showcase-one__para flex items-start justify-start flex-col my-1">
-                The pool view is simply stunning, with crystal-clear water and
-                luxurious loungers to relax in and soak up the sunshine. From
-                the comfort of your own room or balcony, you can take in the
-                serene and picturesque beauty of the pool and its surroundings.
-                With its inviting waters and picturesque setting, the pool view
-                is the perfect spot to unwind and forget about the stresses of
-                daily life.
+
+          <div className="flex flex-wrap items-center gap-4 mt-10">
+            <div className="border-8 p-2 border-gray-900">
+              <img src={HeavyImage} alt="man pushing" className="w-[20rem]" />
+            </div>
+            <div className="w-[40rem]">
+              <h1 className="text-3xl font-bold">Heavy lifting items</h1>
+              <p className="my-3">
+                Let us take the heavy lifting off your shoulders! Our team of
+                experts is equipped with the necessary equipment and expertise
+                to safely and efficiently move your heavy lifting items. From
+                large appliances to industrial equipment, we have you covered.
+                Contact us today and let us handle the heavy lifting for you
               </p>
-              <div>
-                <button className="services-container__showcase-one__book">
-                  Explore more
-                </button>
-              </div>
+              <button className="learn-more">learn more</button>
             </div>
           </div>
-          <div className="services-container__showcase-one">
-            <div className="flex items-start justify-start flex-col">
-              <h1 className="services-container__showcase-one__header">
-                car rental safety check
-              </h1>
-              <p className="services-container__showcase-one__para flex items-start justify-start flex-col my-1">
-                Before renting a car, it's important to perform a safety check
-                to ensure that the vehicle is in good condition and safe to
-                drive. Start by inspecting the tires for any signs of wear or
-                damage, checking the brakes and headlights, and testing the turn
-                signals and windshield wipers. Make sure to also check the car's
-                fluids, including the oil, coolant, and brake fluid, and check
-                the fuel level before driving off the lot.
+
+          <div className="flex flex-wrap items-center gap-4 mt-10">
+            <div className="w-[40rem]">
+              <h1 className="text-3xl font-bold">Delivery on time</h1>
+              <p className="my-3">
+                Experience the peace of mind that comes with reliable, on-time
+                delivery services. With our careful planning, efficient
+                logistics, and effective communication, you can trust that your
+                items will arrive at their intended destination on time, every
+                time. Try our delivery services today and experience the
+                difference!
               </p>
-              <div>
-                <button className="services-container__showcase-one__book">
-                  Explore more
-                </button>
-              </div>
+              <button className="learn-more">learn more</button>
             </div>
-            <img
-              src="https://images.pexels.com/photos/804128/pexels-photo-804128.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="hotel showcase"
-              className="services-container__showcase-one__image rounded"
-            />
-          </div>
-          <div className="services-container__showcase-one">
-            <div className="flex items-start justify-start flex-col">
-              <h1 className="services-container__showcase-one__header">
-                Car rental
-              </h1>
-              <p className="services-container__showcase-one__para flex items-start justify-start flex-col my-1">
-                Car rental services provide convenient access to a variety of
-                vehicles to suit your travel needs, from economy cars to luxury
-                SUVs. Whether you're on vacation or a business trip, renting a
-                car can provide the freedom and flexibility to explore your
-                destination at your own pace. Many car rental companies offer
-                competitive rates, easy online booking, and convenient pickup
-                and drop-off locations to make the rental process seamless and
-                hassle-free.
-              </p>
-              <div>
-                <button className="services-container__showcase-one__book">
-                  Explore more
-                </button>
-              </div>
+            <div className="border-8 p-2 border-gray-900">
+              <img src={OnTimeImage} alt="man pushing" className="w-[20rem]" />
             </div>
-            <img
-              src="https://images.pexels.com/photos/228094/pexels-photo-228094.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="hotel showcase"
-              className="services-container__showcase-one__image rounded"
-            />
           </div>
         </section>
       </section>
