@@ -15,7 +15,7 @@ export const AppFeatures = () => {
         </div>
         <section className="appfeatures-container__cards">
           <div className="appfeatures-container__cards-one">
-            <span class="material-symbols-outlined text-3xl opacity-60">
+            <span class="material-symbols-outlined text-5xl opacity-60">
               local_shipping
             </span>
             <h1 className="appfeatures-container__cards-one__header">
@@ -28,7 +28,7 @@ export const AppFeatures = () => {
             </p>
           </div>
           <div className="appfeatures-container__cards-one">
-            <span class="material-symbols-outlined text-3xl opacity-60">
+            <span class="material-symbols-outlined text-5xl opacity-60">
               wallet
             </span>
             <h1 className="appfeatures-container__cards-one__header">
@@ -40,7 +40,7 @@ export const AppFeatures = () => {
             </p>
           </div>
           <div className="appfeatures-container__cards-one">
-            <span class="material-symbols-outlined text-3xl opacity-60">
+            <span class="material-symbols-outlined text-5xl opacity-60">
               credit_card
             </span>
             <h1 className="appfeatures-container__cards-one__header">

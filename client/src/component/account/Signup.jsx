@@ -7,7 +7,6 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import GoogleLogoImage from "../../assets/google-logo.png";
 import SpotifyLogoImage from "../../assets/spotify-logo.png";
-import LogoImage from "../../assets/logo.png";
 
 export const Signup = () => {
   const [email, setEmail] = useState("");
@@ -90,7 +89,7 @@ export const Signup = () => {
         setMessageERROR("Invalid username or password");
       } else {
         setMessageERROR(
-          "An unexpected error occurred. Please try again later."
+          "Password must be at least 8 characters long, one uppercase, one lowercase, one number, and special character"
         );
       }
     }

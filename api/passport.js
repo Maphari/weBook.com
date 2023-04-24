@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const User = mongoose.model("User");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const SpotifyStrategy = require("passport-spotify").Strategy;
+const jwt = require("jsonwebtoken");
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -28,8 +29,11 @@ passport.use(
       if (user) {
         done(null, user);
       } else {
+        const token = jwt.sign({ userId: profile.id }, process.env.MY_SECRET, {
+          expiresIn: "24",
+        });
         const newUser = new User({
-          clientID: profile.id,
+          clientID: token,
           name: profile.displayName,
           profilePicture: profile.photos ? profile.photos[0].value : null,
           email: profile.emails ? profile.emails[0].value : null,
@@ -52,8 +56,11 @@ passport.use(
       if (user) {
         done(null, user);
       } else {
+        const token = jwt.sign({ userId: profile.id }, process.env.MY_SECRET, {
+          expiresIn: "24",
+        });
         const newUser = new User({
-          clientID: profile.id,
+          clientID: token,
           name: profile.displayName,
           profilePicture: profile.photos ? profile.photos[0].value : null,
           email: profile.emails ? profile.emails[0].value : null,

@@ -5,14 +5,26 @@
 
   &__top {
     margin-bottom: 3.5rem;
+    position: relative;
 
     &-header {
-      font-size: 28px;
+      font-size: 40px;
       font-weight: 800;
     }
     &-para {
       opacity: 0.6;
       font-weight: 400;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -18px;
+      left: 0;
+      width: 10%;
+      height: 7px;
+      background-color: $SECONDARY-COLOR;
+      z-index: 1;
     }
   }
 

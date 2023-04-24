@@ -112,8 +112,7 @@
       &-div {
         display: flex;
         &__header {
-          font-size: 1rem;
-          opacity: 1;
+          font-size: 1.2rem;
         }
         &__search {
           outline: none;
@@ -124,9 +123,11 @@
           }
         }
         .button-dates {
-          padding: 0.7rem;
+          padding: 0.5rem;
           font-family: $POPPINS-FONT-PRIMARY;
-          opacity: 0.6;
+          opacity: 0.8;
+          outline: none;
+          margin: 0.5rem 0;
         }
         .div-border {
           border-left: 1px solid $PRIMARY-COLOR;
@@ -188,4 +189,47 @@
   .sign-button {
     border: 1px solid $WHITE-COLOR;
   }
+}
+
+/* Hide the default select element */
+.select-wrapper {
+  display: none;
+}
+
+/* Style the wrapper element */
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style the select button */
+.select-wrapper:after {
+  content: "\25BC"; /* Add a down arrow */
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px;
+  background-color: #f2f2f2;
+  font-size: 1.2em;
+  pointer-events: none;
+}
+
+/* Style the dropdown options */
+.select-wrapper select {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px;
+  background-color: #f2f2f2;
+  font-size: 1.2em;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+}
+
+/* Style the selected option */
+.select-wrapper select option[selected] {
+  font-weight: bold;
 }

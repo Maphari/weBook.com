@@ -3,7 +3,6 @@ import VansImage from "../../assets/vans.jpg";
 import HeavyImage from "../../assets/heavy.jpg";
 import OnTimeImage from "../../assets/fast delivery.jpg";
 
-
 export const AppShowcaseServices = () => {
   return (
     <>
@@ -19,6 +18,22 @@ export const AppShowcaseServices = () => {
           </p>
         </div>
         <section className="services-container__showcase">
+          <div className="flex flex-wrap items-center gap-4 mt-10">
+            <div className="border-8 p-2 border-gray-900">
+              <img src={HeavyImage} alt="man pushing" className="w-[20rem]" />
+            </div>
+            <div className="w-[40rem]">
+              <h1 className="text-3xl font-bold">Become one of us</h1>
+              <p className="my-3">
+                Let us take the heavy lifting off your shoulders! Our team of
+                experts is equipped with the necessary equipment and expertise
+                to safely and efficiently move your heavy lifting items. From
+                large appliances to industrial equipment, we have you covered.
+                Contact us today and let us handle the heavy lifting for you
+              </p>
+              <button className="learn-more">learn more</button>
+            </div>
+          </div>
           <div className="flex flex-wrap items-center mt-10 gap-3">
             <div className="w-[40rem]">
               <h1 className="text-3xl font-bold">Most reliable vihacles</h1>

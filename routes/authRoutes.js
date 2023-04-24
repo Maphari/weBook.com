@@ -6,6 +6,7 @@ const User = mongoose.model("User");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
+const authMiddleware = require("../middleware/authMiddleware");
 
 // GOOGLE AUTH ROUTES
 route.get(
@@ -95,15 +96,18 @@ route.post("/api/v1/auth/signin_user", async function (req, res) {
     const user = await User.findOne({ email });
 
     if (!user) {
-      return res
-        .status(401)
-        .json({ exist: false, errorMessage: "Invalid username or password" });
+      return res.status(401).json({
+        exist: false,
+        errorMessage: "user not found",
+      });
     }
 
     // CHECKING IF PASSWORD PROVIDED IS THE SAME PASSWORD AS HASHED
     const passwordHashMatch = await bcrypt.compare(password, user.password);
     if (!passwordHashMatch) {
-      return res.status(401).json({ errorMessage: "Invalid username or password" });
+      return res
+        .status(401)
+        .json({ errorMessage: "Invalid username or password" });
     } else {
       req.session.user = {
         user: user,
@@ -120,7 +124,6 @@ route.post("/api/v1/auth/signin_user", async function (req, res) {
     return res.status(401).json({ errorMessage: error.message });
   }
 });
-
 
 // ROUTER AFTER USER SUCCESS ON AUTHENTICATION
 route.get("/api/auth/passport_success", (req, res) => {

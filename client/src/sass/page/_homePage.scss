@@ -1,5 +1,5 @@
 .map-container {
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 1.5rem;
   position: fixed;
   width: 100%;
   display: flex;
@@ -8,10 +8,7 @@
   z-index: 999;
   background-color: $TERTIARY-COLOR;
   color: $WHITE-COLOR;
-
-  .content-container {
-    font-family: $LATO-FONT-SECONDARY;
-  }
+  font-family: $LATO-FONT-SECONDARY;
 }
  .hr {
   border: 1px solid $SECONDARY-COLOR;

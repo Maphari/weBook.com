@@ -5,6 +5,8 @@ import { LandingPage } from "./LandingPageComponents/LandingPage";
 import { ToastContainer } from "react-toastify";
 import { Signup } from "./account/Signup";
 import { Signin } from "./account/Signin";
+import { HelperAccount } from "./account/HelperAccount";
+import { HeleperHome } from "./helper/HelperHome";
 import Loader from "./animation/Loader";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -46,12 +48,33 @@ function App() {
             !sessionID || !googleToken || !spotifyToken ? <Signup /> : <Home />
           }
         />
+        <Route
+          path="/account/helper/signup"
+          element={
+            !sessionID || !googleToken || !spotifyToken ? (
+              <HelperAccount />
+            ) : (
+              <HeleperHome />
+            )
+          }
+        />
+        <Route
+          path="/account/helper/home"
+          element={
+            sessionID || googleToken || spotifyToken ? (
+              <HeleperHome />
+            ) : (
+              <HelperAccount />
+            )
+          }
+        />
       </Routes>
     );
   }
 
   useEffect(() => {
     if (sessionID || googleToken || spotifyToken) {
+      navigate("/home", { replace: true });
     }
   }, []);
 

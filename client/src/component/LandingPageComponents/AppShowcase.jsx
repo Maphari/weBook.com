@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-// IMAGES IMPORTS
-import LogoImage from "../../assets/Logo.png";
+import { ScrollReveal } from "reveal-on-scroll-react";
 // THIRD PARTY IMPORTS
 import { Link, useLocation } from "react-router-dom";
 
@@ -17,7 +16,13 @@ const AppShowcase = () => {
   };
   return (
     <>
-      <section className="showcase-container">
+      <ScrollReveal.div
+        animation="fade-in"
+        easing="backOut"
+        duration="1"
+        delay="0"
+        className="showcase-container"
+      >
         <div className="showcase-container__top flex items-center flex-wrap justify-between">
           <div className="flex items-center gap-[0.01rem]">
             <h1 className="showcase-container__top-header">
@@ -26,10 +31,8 @@ const AppShowcase = () => {
           </div>
           <div className="menu flex items-center flex-wrap gap-2">
             <Link
-              to="/cars"
-              className={`${
-                location.pathname === "/car-rental" ? "active" : ""
-              } active-hover p-2 flex items-center gap-2 opacity-80 hover:opacity-100 mr-4 hover:text-white`}
+              to="/account/helper/signup"
+              className={`active-hover p-2 flex items-center gap-2 opacity-80 hover:opacity-100 mr-4 hover:text-white`}
             >
               <i className="fa-solid fa-truck-fast"></i>{" "}
               <span>Become a helper</span>
@@ -51,16 +54,28 @@ const AppShowcase = () => {
         </div>
         <div className="showcase-container__center flex justify-between items-center">
           <div>
-            <h1 className="showcase-container__center-header drop-shadow-2xl">
+            <ScrollReveal.h1
+              animation="fade-in"
+              easing="backOut"
+              duration="1"
+              delay="0"
+              className="showcase-container__center-header drop-shadow-2xl"
+            >
               Elite Express Inc. delivers excellence <br />
               through efficient and reliable <br />
               transportation solutions
-            </h1>
-            <p className="showcase-container__center-para">
+            </ScrollReveal.h1>
+            <ScrollReveal.p
+              animation="fade-in"
+              easing="backOut"
+              duration="1"
+              delay="0"
+              className="showcase-container__center-para"
+            >
               With a commitment to excellence, Elite Express Inc. provides fast
               and cost-effective transportation
               <br /> services to businesses across the nation.
-            </p>
+            </ScrollReveal.p>
             <div className="mt-4">
               <h1 className="news-header">Subcribe to our news letter</h1>
               <p className="news-para">
@@ -100,9 +115,11 @@ const AppShowcase = () => {
                     <span class="material-symbols-outlined opacity-60">
                       map
                     </span>
-                    <button type="submit" className="button-dates">
-                      Where are you going?
-                    </button>
+                    <input
+                      type="text"
+                      placeholder="Where are you going?"
+                      className="button-dates"
+                    />
                   </div>
                 </div>
                 <div className="div-border ml-2"></div>
@@ -114,9 +131,11 @@ const AppShowcase = () => {
                     <span class="material-symbols-outlined opacity-60">
                       distance
                     </span>
-                    <button type="submit" className="button-dates">
-                      where to be delivered
-                    </button>
+                    <input
+                      type="text"
+                      placeholder="where to be delivered?"
+                      className="button-dates"
+                    />
                   </div>
                 </div>
                 <div className="div-border ml-2"></div>
@@ -128,9 +147,16 @@ const AppShowcase = () => {
                     <span class="material-symbols-outlined opacity-60">
                       local_shipping
                     </span>
-                    <button type="submit" className="button-dates">
-                      Small truck
-                    </button>
+                    <select className="button-dates select-wrapper">
+                      <option value="select-option" selected>
+                        Select truck
+                      </option>
+                      <option value="small-van">Small van</option>
+                      <option value="medium-van">Medium van</option>
+                      <option value="large-van">Large van</option>
+                      <option value="extra-larger-van">Extra large van</option>
+                      <option value="xx-larger-van">XX-Extralarge van</option>
+                    </select>
                   </div>
                 </div>
                 <div className="div-border ml-2"></div>
@@ -141,7 +167,7 @@ const AppShowcase = () => {
             </button>
           </div>
         </section>
-      </section>
+      </ScrollReveal.div>
     </>
   );
 };

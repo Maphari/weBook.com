@@ -1,6 +1,7 @@
 require("dotenv").config();
 require("./models/User");
 require("./api/passport");
+require("./models/Staff");
 const express = require("express");
 const mongoose = require("mongoose");
 const passport = require("passport");
@@ -8,7 +9,6 @@ const cookieSession = require("cookie-session");
 const route = require("./routes/authRoutes");
 const cors = require("cors");
 const dataRoutes = require("./routes/dataRoutes");
-const treblle = require("@treblle/express");
 const app = express();
 
 app.use(cors({ origin: process.env.CLIENT_ROUTE, credentials: true }));
@@ -21,13 +21,6 @@ app.use(
   })
 );
 app.use(express.json());
-app.use(
-  treblle({
-    apiKey: process.env.TREBLLE_API_KEY,
-    projectId: process.env.TREBLLE_PROJECT_ID,
-    additionalFieldsToMask: [],
-  })
-);
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(route);

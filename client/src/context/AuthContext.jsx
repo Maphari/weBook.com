@@ -14,13 +14,13 @@ export const AutProvider = ({ children }) => {
       const emailPasswordResponse = await axios.get(
         "/api/auth/account_success"
       );
-      const isDataEmailAndPassword =
-        emailPasswordResponse.data.session === emailPasswordSession;
+        console.log(emailPasswordResponse)
+      const isDataEmailAndPassword = emailPasswordResponse?.data?.user?.session === emailPasswordSession;
       const isDataGoogle = googleSession === passportResponse?.data?.session;
       const isDataSpotify = spotifySession === passportResponse?.data?.session;
 
       if (isDataEmailAndPassword) {
-        setData(emailPasswordResponse.data);
+        setData(emailPasswordResponse?.data?.user);
       } else if (isDataGoogle || isDataSpotify) {
         setData(passportResponse.data);
       } else {
@@ -30,6 +30,8 @@ export const AutProvider = ({ children }) => {
 
     return () => getData();
   }, []);
+
+
 
   return (
     <AuthContext.Provider value={{ data }}>{children}</AuthContext.Provider>
